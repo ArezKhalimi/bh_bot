@@ -1,0 +1,35 @@
+{
+	"ok":true,
+	"result":[
+		{
+			"update_id":984541910,
+			"message": {
+				"message_id":51,
+				"from":{
+					"id":68871020,
+					"is_bot":false,
+					"first_name":"Arez",
+					"last_name":"Halimi",
+					"username":"GreenAle",
+					"language_code":"ru-UA"
+				},
+				"chat":{
+					"id":68871020,
+					"first_name":"Arez",
+					"last_name":"Halimi",
+					"username":"GreenAle",
+					"type":"private"
+				},
+				"date":1520523301,
+				"text":"/ate",
+				"entities":[
+					{
+						"offset":0,
+						"length":4,
+						"type":"bot_command"
+					}
+				]
+			}
+		}
+	]
+}
