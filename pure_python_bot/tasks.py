@@ -13,16 +13,16 @@ app = Celery('tasks', broker='redis://localhost:6379/0')
 
 
 @app.on_after_configure.connect
-def setup_morning_greetings_task(sender, chat_id, chat_name, **kwargs):
+def setup_morning_greetings_task(sender, user_id, chat_name, **kwargs):
     # Executes every Monday morning at 7:30 a.m.
     sender.add_periodic_task(
         crontab(hour=7, minute=30, day_of_week=1),
-        morning_greetings_task.s(chat_id, chat_name),
+        morning_greetings_task.s(user_id, chat_name),
     )
 
 
 @app.task
-def morning_greetings_task(chat_id, chat_name):
+def morning_greetings_task(user_id, chat_name):
     greet_bot.send_message(
-        chat_id, '{} {}'.format(random.choice(MORNING_GREETINGS), chat_name)
+        user_id, '{} {}'.format(random.choice(MORNING_GREETINGS), chat_name)
     )
