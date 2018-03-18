@@ -6,8 +6,9 @@ verify_ssl = true
 django = "*"
 gunicorn = "*"
 psycopg2 = "*"
-redis = "2.10.6"
-djangorestframework = "3.7.7"
+redis = "*"
+djangorestframework = "*"
+django_heroku = "*"
 
 [requires]
 python_version = "3.6"
